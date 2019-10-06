@@ -1,0 +1,51 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace JeandreHattingh_19013170_Task01
+{
+    abstract class Unit
+    {
+        protected int xPos;
+        protected int yPos;
+        protected int hp;
+        protected int maxHP;
+        protected int speed;
+        protected int atk;
+        protected int atkRange;
+        protected string team;
+        protected char symbol;
+        protected bool engage;
+
+        protected Unit(int x, int y, int currentHP, int movement, int unitAtk, int unitRange, string unitTeam, char unitSym, bool unitEngage)
+        {
+            this.xPos = x;
+            this.yPos = y;
+            this.hp = currentHP;
+            this.maxHP = currentHP;
+            this.speed = movement;
+            this.atk = unitAtk;
+            this.atkRange = unitRange;
+            this.team = unitTeam;
+            this.symbol = unitSym;
+            this.engage = unitEngage;
+        }
+
+            public abstract string Move(Unit unitToEngage);
+
+            public abstract void Combat(Unit attackingUnit);
+
+            public abstract bool Engaging(Unit unitInRange);
+
+            public abstract Unit EnemyPos(Unit[] unitClosetCheck);
+
+            public abstract bool Death();
+
+            public override abstract string ToString();
+
+
+        
+    }
+}

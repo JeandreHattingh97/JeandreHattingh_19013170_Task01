@@ -1,6 +1,6 @@
 ﻿namespace JeandreHattingh_19013170_Task01
 {
-    partial class Form1
+    partial class frmBattleSim
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,91 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.btnStart = new System.Windows.Forms.Button();
+            this.btnPause = new System.Windows.Forms.Button();
+            this.lblTimer = new System.Windows.Forms.Label();
+            this.lblGameMap = new System.Windows.Forms.Label();
+            this.rtbGameInfo = new System.Windows.Forms.RichTextBox();
+            this.timerRoundTimer = new System.Windows.Forms.Timer(this.components);
+            this.SuspendLayout();
+            // 
+            // btnStart
+            // 
+            this.btnStart.Location = new System.Drawing.Point(514, 359);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(75, 23);
+            this.btnStart.TabIndex = 0;
+            this.btnStart.Text = "Start";
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click_1);
+            // 
+            // btnPause
+            // 
+            this.btnPause.Location = new System.Drawing.Point(694, 359);
+            this.btnPause.Name = "btnPause";
+            this.btnPause.Size = new System.Drawing.Size(75, 23);
+            this.btnPause.TabIndex = 1;
+            this.btnPause.Text = "Pause";
+            this.btnPause.UseVisualStyleBackColor = true;
+            this.btnPause.Click += new System.EventHandler(this.btnPause_Click_1);
+            // 
+            // lblTimer
+            // 
+            this.lblTimer.AutoSize = true;
+            this.lblTimer.Location = new System.Drawing.Point(626, 319);
+            this.lblTimer.Name = "lblTimer";
+            this.lblTimer.Size = new System.Drawing.Size(33, 13);
+            this.lblTimer.TabIndex = 2;
+            this.lblTimer.Text = "Timer";
+            // 
+            // lblGameMap
+            // 
+            this.lblGameMap.AutoSize = true;
+            this.lblGameMap.Location = new System.Drawing.Point(34, 31);
+            this.lblGameMap.Name = "lblGameMap";
+            this.lblGameMap.Size = new System.Drawing.Size(59, 13);
+            this.lblGameMap.TabIndex = 3;
+            this.lblGameMap.Text = "Game Map";
+            // 
+            // rtbGameInfo
+            // 
+            this.rtbGameInfo.Location = new System.Drawing.Point(514, 12);
+            this.rtbGameInfo.Name = "rtbGameInfo";
+            this.rtbGameInfo.Size = new System.Drawing.Size(255, 270);
+            this.rtbGameInfo.TabIndex = 4;
+            this.rtbGameInfo.Text = "";
+            // 
+            // timerRoundTimer
+            // 
+            this.timerRoundTimer.Interval = 600;
+            this.timerRoundTimer.Tick += new System.EventHandler(this.timerRoundTimer_Tick);
+            // 
+            // frmBattleSim
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Controls.Add(this.rtbGameInfo);
+            this.Controls.Add(this.lblGameMap);
+            this.Controls.Add(this.lblTimer);
+            this.Controls.Add(this.btnPause);
+            this.Controls.Add(this.btnStart);
+            this.Name = "frmBattleSim";
+            this.Text = "Battle Sim";
+            this.Load += new System.EventHandler(this.frmBattleSim_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnStart;
+        private System.Windows.Forms.Button btnPause;
+        private System.Windows.Forms.Label lblTimer;
+        private System.Windows.Forms.Label lblGameMap;
+        private System.Windows.Forms.RichTextBox rtbGameInfo;
+        private System.Windows.Forms.Timer timerRoundTimer;
     }
 }
 
