@@ -8,6 +8,7 @@ namespace JeandreHattingh_19013170_Task01
 {
     abstract class Unit
     {
+        //These are the Unit class's protected definitions
         protected int xPos;
         protected int yPos;
         protected int hp;
@@ -33,19 +34,18 @@ namespace JeandreHattingh_19013170_Task01
             this.engage = unitEngage;
         }
 
-            public abstract string Move(Unit unitToEngage);
+        //This is the Unit class's abstract method definitions
 
-            public abstract void Combat(Unit attackingUnit);
+        public abstract string Move(Unit unitToEngage);
 
-            public abstract bool Engaging(Unit unitInRange);
+        public abstract void Combat(Unit attackingUnit);
 
-            public abstract Unit EnemyPos(Unit[] unitClosetCheck);
+        public abstract bool Engaging(Unit unitInRange);
 
-            public abstract bool Death();
+        public abstract Unit EnemyPos(Unit[] unitClosetCheck);
 
-            public override abstract string ToString();
+        public abstract bool Death();
 
-
-        
+        public override abstract string ToString();
     }
 }

@@ -10,11 +10,13 @@ namespace JeandreHattingh_19013170_Task01
     {
         Map mapTracker = new Map(10);
 
+        //Uses constructor initialisers to call “Unit’s” constructor with relevant values for a specific Unit
         public RangedUnit(int randgedX, int rangedY, string rangedTeam, char rangedSym, bool rangedEngaging) : base(randgedX, rangedY, 6, 3, 1, 2, rangedTeam, rangedSym, rangedEngaging)
         {
 
         }
 
+        //A method to move to a new position
         public override string Move(Unit unitToEngage)
         {
             string returnVal = "";
@@ -97,6 +99,7 @@ namespace JeandreHattingh_19013170_Task01
             return returnVal;
         }
 
+        //A method to handle combat with another unit
         public override void Combat(Unit attackingUnit)
         {
             string typeCheck = attackingUnit.GetType().ToString();
@@ -119,6 +122,7 @@ namespace JeandreHattingh_19013170_Task01
             }
         }
 
+        //A method to determine whether another unit is within attack range
         public override bool Engaging(Unit unitInRange)
         {
             bool inRange = false; ;
@@ -159,6 +163,7 @@ namespace JeandreHattingh_19013170_Task01
             return inRange;
         }
 
+        //A method to return position of the closest other unit to this unit
         public override Unit EnemyPos(Unit[] unitClosetCheck)
         {
             int result;
@@ -216,6 +221,7 @@ namespace JeandreHattingh_19013170_Task01
             return returnVal;
         }
 
+        //A method to handle the death/ destruction of this unit
         public override bool Death()
         {
             bool unitDead;
@@ -232,6 +238,7 @@ namespace JeandreHattingh_19013170_Task01
             return unitDead;
         }
 
+        //A method to move to a new position
         public string RandomMove()
         {
             Random rgn = new Random();
@@ -265,6 +272,7 @@ namespace JeandreHattingh_19013170_Task01
             return moveDirection;
         }
 
+        //A ToString() method to return a neatly formatted string showing all the unit information
         public override string ToString()
         {
             string returnVal = "";
@@ -284,6 +292,7 @@ namespace JeandreHattingh_19013170_Task01
             return returnVal;
         }
 
+        //Accessors for the specific class
         public int RuXPos { get => base.xPos; set => base.xPos = value; }
         public int RuYPos { get => base.yPos; set => base.yPos = value; }
         public int RuHealth { get => base.hp; set => base.hp = value; }

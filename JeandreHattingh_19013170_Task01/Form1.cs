@@ -21,6 +21,7 @@ namespace JeandreHattingh_19013170_Task01
             InitializeComponent();
         }
 
+        //The displayInfo() method is used to display the game's information to the rich text box
         private void displayInfo()
         {
             gameInfo = "";
@@ -44,16 +45,19 @@ namespace JeandreHattingh_19013170_Task01
             rtbGameInfo.Text = gameInfo;
         }
 
+        //The btnStart is used to start the simulation when pressed and resume it when paused
         private void btnStart_Click_1(object sender, EventArgs e)
         {
             timerRoundTimer.Start();
         }
 
+        //The btnPause is used to pause the game the simulation
         private void btnPause_Click_1(object sender, EventArgs e)
         {
             timerRoundTimer.Stop();
         }
 
+        //The timerRoundTimer is used to tick up the rounds as the simulation progresses
         private void timerRoundTimer_Tick(object sender, EventArgs e)
         {
             rtbGameInfo.Text = "";

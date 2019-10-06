@@ -16,6 +16,7 @@ namespace JeandreHattingh_19013170_Task01
 
         int unitAmount;
 
+        //A constructor that receives the number of units to create
         public int UnitAmount { get => unitAmount; set => unitAmount = value; }
 
         public Map(int numberOfUnits)
@@ -24,6 +25,7 @@ namespace JeandreHattingh_19013170_Task01
             unitArr = new Unit[numberOfUnits];
         }
 
+        //A method that recieves the other methods
         public void genMap()
         {
             genUnits();
@@ -31,6 +33,7 @@ namespace JeandreHattingh_19013170_Task01
             fillMap();
         }
 
+        //A method to randomise the units' X and Y position
         private void genUnits()
         {
             string teamName;
@@ -82,6 +85,7 @@ namespace JeandreHattingh_19013170_Task01
             }
         }
 
+        //A method to fill the map with units
         private void populateWithUnits()
         {
             foreach (Unit unit in unitArr)
@@ -102,7 +106,8 @@ namespace JeandreHattingh_19013170_Task01
                 }
             }
         }
-
+        
+        //A method to randomly generate a new battlefield
         public string drawMap()
         {
             string mapDraw = "";
@@ -119,6 +124,7 @@ namespace JeandreHattingh_19013170_Task01
             return mapDraw;
         }
 
+        //A method to fill the map with placeholders
         private void fillMap()
         {
             for (int i = 0; i <= HEIGHT - 1; i++)
